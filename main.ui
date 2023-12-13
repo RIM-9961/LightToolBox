@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <author>Wanderson M. Pimenta</author>
+ <author>RIm</author>
  <class>MainWindow</class>
  <widget class="QMainWindow" name="MainWindow">
   <property name="geometry">
@@ -653,8 +653,8 @@ Button */
              </property>
              <property name="maximumSize">
               <size>
-               <width>42</width>
-               <height>42</height>
+               <width>120</width>
+               <height>120</height>
               </size>
              </property>
              <property name="frameShape">
@@ -808,6 +808,12 @@ Button */
                   <property name="text">
                    <string>隐藏侧边栏</string>
                   </property>
+                  <property name="iconSize">
+                   <size>
+                    <width>16</width>
+                    <height>16</height>
+                   </size>
+                  </property>
                  </widget>
                 </item>
                </layout>
@@ -870,42 +876,6 @@ Button */
                   </property>
                   <property name="text">
                    <string>主页</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QPushButton" name="btn_widgets">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="minimumSize">
-                   <size>
-                    <width>0</width>
-                    <height>45</height>
-                   </size>
-                  </property>
-                  <property name="font">
-                   <font>
-                    <family>Segoe UI</family>
-                    <pointsize>10</pointsize>
-                    <italic>false</italic>
-                    <bold>false</bold>
-                   </font>
-                  </property>
-                  <property name="cursor">
-                   <cursorShape>PointingHandCursor</cursorShape>
-                  </property>
-                  <property name="layoutDirection">
-                   <enum>Qt::LeftToRight</enum>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">background-image: url(:/icons/images/icons/cil-gamepad.png);</string>
-                  </property>
-                  <property name="text">
-                   <string>示例</string>
                   </property>
                  </widget>
                 </item>
@@ -1866,10 +1836,119 @@ li.checked::marker { content: &quot;\2612&quot;; }
                      </property>
                      <widget class="QWidget" name="home">
                       <property name="styleSheet">
-                       <string notr="true">background-image: url(:/images/images/images/PyDracula_vertical.png);
-background-position: center;
-background-repeat: no-repeat;</string>
+                       <string notr="true"/>
                       </property>
+                      <widget class="QPushButton" name="btn_team">
+                       <property name="geometry">
+                        <rect>
+                         <x>30</x>
+                         <y>20</y>
+                         <width>181</width>
+                         <height>231</height>
+                        </rect>
+                       </property>
+                       <property name="text">
+                        <string>团队介绍</string>
+                       </property>
+                       <property name="icon">
+                        <iconset theme="application-x-executable"/>
+                       </property>
+                      </widget>
+                      <widget class="QFrame" name="frame">
+                       <property name="geometry">
+                        <rect>
+                         <x>30</x>
+                         <y>30</y>
+                         <width>1161</width>
+                         <height>271</height>
+                        </rect>
+                       </property>
+                       <property name="frameShape">
+                        <enum>QFrame::StyledPanel</enum>
+                       </property>
+                       <property name="frameShadow">
+                        <enum>QFrame::Raised</enum>
+                       </property>
+                      </widget>
+                      <widget class="QPushButton" name="pushButton_4">
+                       <property name="geometry">
+                        <rect>
+                         <x>690</x>
+                         <y>310</y>
+                         <width>371</width>
+                         <height>71</height>
+                        </rect>
+                       </property>
+                       <property name="text">
+                        <string>PushButton</string>
+                       </property>
+                      </widget>
+                      <widget class="QPushButton" name="pushButton_3">
+                       <property name="geometry">
+                        <rect>
+                         <x>690</x>
+                         <y>400</y>
+                         <width>371</width>
+                         <height>71</height>
+                        </rect>
+                       </property>
+                       <property name="text">
+                        <string>PushButton</string>
+                       </property>
+                      </widget>
+                      <widget class="QPushButton" name="pushButton_2">
+                       <property name="geometry">
+                        <rect>
+                         <x>690</x>
+                         <y>490</y>
+                         <width>371</width>
+                         <height>71</height>
+                        </rect>
+                       </property>
+                       <property name="text">
+                        <string>PushButton</string>
+                       </property>
+                      </widget>
+                      <widget class="QScrollArea" name="scrollArea_2">
+                       <property name="geometry">
+                        <rect>
+                         <x>30</x>
+                         <y>310</y>
+                         <width>601</width>
+                         <height>251</height>
+                        </rect>
+                       </property>
+                       <property name="widgetResizable">
+                        <bool>true</bool>
+                       </property>
+                       <widget class="QWidget" name="scrollAreaWidgetContents_2">
+                        <property name="geometry">
+                         <rect>
+                          <x>0</x>
+                          <y>0</y>
+                          <width>599</width>
+                          <height>249</height>
+                         </rect>
+                        </property>
+                       </widget>
+                      </widget>
+                      <widget class="QWidget" name="widget" native="true">
+                       <property name="geometry">
+                        <rect>
+                         <x>0</x>
+                         <y>0</y>
+                         <width>120</width>
+                         <height>80</height>
+                        </rect>
+                       </property>
+                      </widget>
+                      <zorder>frame</zorder>
+                      <zorder>btn_team</zorder>
+                      <zorder>pushButton_4</zorder>
+                      <zorder>pushButton_3</zorder>
+                      <zorder>pushButton_2</zorder>
+                      <zorder>scrollArea_2</zorder>
+                      <zorder>widget</zorder>
                      </widget>
                      <widget class="QWidget" name="widgets">
                       <property name="styleSheet">
@@ -2166,7 +2245,7 @@ background-repeat: no-repeat;</string>
                                 <rect>
                                  <x>0</x>
                                  <y>0</y>
-                                 <width>355</width>
+                                 <width>218</width>
                                  <height>218</height>
                                 </rect>
                                </property>
@@ -3011,16 +3090,6 @@ background-repeat: no-repeat;</string>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QLabel" name="version">
-                  <property name="text">
-                   <string>v1.0.3</string>
-                  </property>
-                  <property name="alignment">
-                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                  </property>
-                 </widget>
-                </item>
-                <item>
                  <widget class="QFrame" name="frame_size_grip">
                   <property name="minimumSize">
                    <size>
@@ -3057,6 +3126,9 @@ background-repeat: no-repeat;</string>
    </layout>
   </widget>
  </widget>
+ <includes>
+  <include location="local">3035194688</include>
+ </includes>
  <resources>
   <include location="resources.qrc"/>
  </resources>

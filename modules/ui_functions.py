@@ -69,11 +69,9 @@ class UIFunctions(MainWindow):
     def toggleMenu(self, enable):
         if enable:
             # 获取宽度
-            screen = QGuiApplication.primaryScreen().geometry()  # 获取屏幕类并调用geometry()方法获取屏幕大小
-            s_height = screen.height()  # 获取屏幕的宽
             width = self.ui.leftMenuBg.width()
             maxExtend = Settings.MENU_WIDTH
-            standard = s_height/20
+            standard = 60
             # SET MAX WIDTH
             if width == maxExtend:
                 widthExtended = standard

@@ -591,7 +591,7 @@ class Ui_MainWindow(object):
         self.topLogo.setObjectName(u"topLogo")
         self.topLogo.setGeometry(QRect(10, 10, 42, 42))
         self.topLogo.setMinimumSize(QSize(42, 42))
-        self.topLogo.setMaximumSize(QSize(42, 42))
+        self.topLogo.setMaximumSize(QSize(120, 120))
         self.topLogo.setFrameShape(QFrame.NoFrame)
         self.topLogo.setFrameShadow(QFrame.Raised)
         self.titleLeftApp = QLabel(self.topLogoInfo)
@@ -646,6 +646,7 @@ class Ui_MainWindow(object):
         self.toggleButton.setCursor(QCursor(Qt.PointingHandCursor))
         self.toggleButton.setLayoutDirection(Qt.LeftToRight)
         self.toggleButton.setStyleSheet(u"background-image: url(:/icons/images/icons/icon_menu.png);")
+        self.toggleButton.setIconSize(QSize(16, 16))
 
         self.verticalLayout_4.addWidget(self.toggleButton)
 
@@ -671,18 +672,6 @@ class Ui_MainWindow(object):
         self.btn_home.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-home.png);")
 
         self.verticalLayout_8.addWidget(self.btn_home)
-
-        self.btn_widgets = QPushButton(self.topMenu)
-        self.btn_widgets.setObjectName(u"btn_widgets")
-        sizePolicy.setHeightForWidth(self.btn_widgets.sizePolicy().hasHeightForWidth())
-        self.btn_widgets.setSizePolicy(sizePolicy)
-        self.btn_widgets.setMinimumSize(QSize(0, 45))
-        self.btn_widgets.setFont(font)
-        self.btn_widgets.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_widgets.setLayoutDirection(Qt.LeftToRight)
-        self.btn_widgets.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-gamepad.png);")
-
-        self.verticalLayout_8.addWidget(self.btn_widgets)
 
         self.btn_new = QPushButton(self.topMenu)
         self.btn_new.setObjectName(u"btn_new")
@@ -1041,10 +1030,41 @@ class Ui_MainWindow(object):
         self.stackedWidget.setStyleSheet(u"background: transparent;")
         self.home = QWidget()
         self.home.setObjectName(u"home")
-        self.home.setStyleSheet(u"background-image: url(:/images/images/images/PyDracula_vertical.png);\n"
-"background-position: center;\n"
-"background-repeat: no-repeat;")
+        self.home.setStyleSheet(u"")
+        self.btn_team = QPushButton(self.home)
+        self.btn_team.setObjectName(u"btn_team")
+        self.btn_team.setGeometry(QRect(30, 20, 181, 231))
+        icon4 = QIcon(QIcon.fromTheme(u"application-x-executable"))
+        self.btn_team.setIcon(icon4)
+        self.frame = QFrame(self.home)
+        self.frame.setObjectName(u"frame")
+        self.frame.setGeometry(QRect(30, 30, 1161, 271))
+        self.frame.setFrameShape(QFrame.StyledPanel)
+        self.frame.setFrameShadow(QFrame.Raised)
+        self.pushButton_4 = QPushButton(self.home)
+        self.pushButton_4.setObjectName(u"pushButton_4")
+        self.pushButton_4.setGeometry(QRect(690, 310, 371, 71))
+        self.pushButton_3 = QPushButton(self.home)
+        self.pushButton_3.setObjectName(u"pushButton_3")
+        self.pushButton_3.setGeometry(QRect(690, 400, 371, 71))
+        self.pushButton_2 = QPushButton(self.home)
+        self.pushButton_2.setObjectName(u"pushButton_2")
+        self.pushButton_2.setGeometry(QRect(690, 490, 371, 71))
+        self.scrollArea_2 = QScrollArea(self.home)
+        self.scrollArea_2.setObjectName(u"scrollArea_2")
+        self.scrollArea_2.setGeometry(QRect(30, 310, 601, 251))
+        self.scrollArea_2.setWidgetResizable(True)
+        self.scrollAreaWidgetContents_2 = QWidget()
+        self.scrollAreaWidgetContents_2.setObjectName(u"scrollAreaWidgetContents_2")
+        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 599, 249))
+        self.scrollArea_2.setWidget(self.scrollAreaWidgetContents_2)
         self.stackedWidget.addWidget(self.home)
+        self.frame.raise_()
+        self.btn_team.raise_()
+        self.pushButton_4.raise_()
+        self.pushButton_3.raise_()
+        self.pushButton_2.raise_()
+        self.scrollArea_2.raise_()
         self.widgets = QWidget()
         self.widgets.setObjectName(u"widgets")
         self.widgets.setStyleSheet(u"b")
@@ -1109,9 +1129,9 @@ class Ui_MainWindow(object):
         self.pushButton.setFont(font)
         self.pushButton.setCursor(QCursor(Qt.PointingHandCursor))
         self.pushButton.setStyleSheet(u"background-color: rgb(52, 59, 72);")
-        icon4 = QIcon()
-        icon4.addFile(u":/icons/images/icons/cil-folder-open.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.pushButton.setIcon(icon4)
+        icon5 = QIcon()
+        icon5.addFile(u":/icons/images/icons/cil-folder-open.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.pushButton.setIcon(icon5)
 
         self.gridLayout.addWidget(self.pushButton, 0, 1, 1, 1)
 
@@ -1234,9 +1254,9 @@ class Ui_MainWindow(object):
         self.commandLinkButton.setObjectName(u"commandLinkButton")
         self.commandLinkButton.setCursor(QCursor(Qt.PointingHandCursor))
         self.commandLinkButton.setStyleSheet(u"")
-        icon5 = QIcon()
-        icon5.addFile(u":/icons/images/icons/cil-link.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.commandLinkButton.setIcon(icon5)
+        icon6 = QIcon()
+        icon6.addFile(u":/icons/images/icons/cil-link.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.commandLinkButton.setIcon(icon6)
 
         self.gridLayout_2.addWidget(self.commandLinkButton, 1, 6, 1, 1)
 
@@ -1508,12 +1528,6 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_5.addWidget(self.creditsLabel)
 
-        self.version = QLabel(self.bottomBar)
-        self.version.setObjectName(u"version")
-        self.version.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
-
-        self.horizontalLayout_5.addWidget(self.version)
-
         self.frame_size_grip = QFrame(self.bottomBar)
         self.frame_size_grip.setObjectName(u"frame_size_grip")
         self.frame_size_grip.setMinimumSize(QSize(20, 0))
@@ -1539,7 +1553,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(2)
+        self.stackedWidget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -1547,11 +1561,10 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
-        self.titleLeftApp.setText(QCoreApplication.translate("MainWindow", u"PyDracula", None))
-        self.titleLeftDescription.setText(QCoreApplication.translate("MainWindow", u"Modern GUI / Flat Style", None))
+        self.titleLeftApp.setText(QCoreApplication.translate("MainWindow", u"\u5149\u5203\u5de5\u4f5c\u5ba4", None))
+        self.titleLeftDescription.setText(QCoreApplication.translate("MainWindow", u"\u5b89\u5fbd\u5de5\u4e1a\u5927\u5b66", None))
         self.toggleButton.setText(QCoreApplication.translate("MainWindow", u"\u9690\u85cf\u4fa7\u8fb9\u680f", None))
         self.btn_home.setText(QCoreApplication.translate("MainWindow", u"\u4e3b\u9875", None))
-        self.btn_widgets.setText(QCoreApplication.translate("MainWindow", u"\u793a\u4f8b", None))
         self.btn_new.setText(QCoreApplication.translate("MainWindow", u"\u65b0\u5efa\u9879\u76ee", None))
         self.btn_save.setText(QCoreApplication.translate("MainWindow", u"\u5bfc\u51fa\u9879\u76ee", None))
         self.btn_exit.setText(QCoreApplication.translate("MainWindow", u"Exit", None))
@@ -1598,6 +1611,10 @@ class Ui_MainWindow(object):
         self.closeAppBtn.setToolTip(QCoreApplication.translate("MainWindow", u"Close", None))
 #endif // QT_CONFIG(tooltip)
         self.closeAppBtn.setText("")
+        self.btn_team.setText(QCoreApplication.translate("MainWindow", u"\u56e2\u961f\u4ecb\u7ecd", None))
+        self.pushButton_4.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
+        self.pushButton_3.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
+        self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
         self.labelBoxBlenderInstalation.setText(QCoreApplication.translate("MainWindow", u"FILE BOX", None))
         self.lineEdit.setText("")
         self.lineEdit.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Type here", None))
@@ -1669,6 +1686,5 @@ class Ui_MainWindow(object):
         self.btn_print.setText(QCoreApplication.translate("MainWindow", u"Print", None))
         self.btn_logout.setText(QCoreApplication.translate("MainWindow", u"Logout", None))
         self.creditsLabel.setText(QCoreApplication.translate("MainWindow", u"\u7248\u672c\u53f7\uff1aXXXX    \u662f\u5426\u8054\u7f51\uff1aXXXX    \u8bbe\u5907\u63a5\u5165\uff1aXXXX", None))
-        self.version.setText(QCoreApplication.translate("MainWindow", u"v1.0.3", None))
     # retranslateUi
 

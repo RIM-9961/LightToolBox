@@ -4,11 +4,9 @@ import platform
 from modules import *
 from widgets import *
 os.environ["QT_FONT_DPI"] = "96" # FIX Problem for High DPI and Scale above 100%
-
 # SET AS GLOBAL widgets
 #-------------------------------------------------------------
 widgets = None
-
 class MainWindow(QMainWindow):
     def __init__(self):
         QMainWindow.__init__(self)
@@ -27,15 +25,11 @@ class MainWindow(QMainWindow):
         title = "光刃工具箱"
         description = "光刃工具箱"
         #屏幕大小自适应
-        polynum=20#子控件跟mainwindow的大小比例
         self.resize(width*0.7,height*0.7)
-        widgets.leftMenuBg.setMinimumSize(QSize(height/polynum,0))
-        widgets.topLogoInfo.setMinimumSize(QSize(0,height/polynum))
-        # APPLY TEXTS
+        # 设置窗口标题
         self.setWindowTitle(title)
         widgets.titleRightInfo.setText(description)
         widgets.toggleButton.clicked.connect(lambda: UIFunctions.toggleMenu(self, True))
-        # SET UI DEFINITIONS
         #-------------------------------------------------------------
         UIFunctions.uiDefinitions(self)
         # QTableWidget PARAMETERS
@@ -45,7 +39,7 @@ class MainWindow(QMainWindow):
         #-------------------------------------------------------------
         # LEFT MENUS
         widgets.btn_home.clicked.connect(self.buttonClick)
-        widgets.btn_widgets.clicked.connect(self.buttonClick)
+        #widgets.btn_widgets.clicked.connect(self.buttonClick)
         widgets.btn_new.clicked.connect(self.buttonClick)
         widgets.btn_save.clicked.connect(self.buttonClick)
         # EXTRA LEFT BOX
@@ -116,8 +110,8 @@ class MainWindow(QMainWindow):
         if event.buttons() == Qt.RightButton:
             print('Mouse click: RIGHT CLICK')
 if __name__ == "__main__":
-    QApplication.setHighDpiScaleFactorRoundingPolicy(Qt.HighDpiScaleFactorRoundingPolicy.PassThrough)
     app = QApplication(sys.argv)
     app.setWindowIcon(QIcon("icon.ico"))
     window = MainWindow()
     sys.exit(app.exec())
+    
