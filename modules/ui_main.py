@@ -558,10 +558,8 @@ class Ui_MainWindow(object):
 "}\n"
 "\n"
 "")
-        self.appMargins = QVBoxLayout(self.styleSheet)
-        self.appMargins.setSpacing(0)
-        self.appMargins.setObjectName(u"appMargins")
-        self.appMargins.setContentsMargins(10, 10, 10, 10)
+        self.gridLayout_3 = QGridLayout(self.styleSheet)
+        self.gridLayout_3.setObjectName(u"gridLayout_3")
         self.bgApp = QFrame(self.styleSheet)
         self.bgApp.setObjectName(u"bgApp")
         self.bgApp.setStyleSheet(u"")
@@ -1027,37 +1025,73 @@ class Ui_MainWindow(object):
         self.verticalLayout_15.setContentsMargins(10, 10, 10, 10)
         self.stackedWidget = QStackedWidget(self.pagesContainer)
         self.stackedWidget.setObjectName(u"stackedWidget")
+        sizePolicy3 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
+        sizePolicy3.setHorizontalStretch(0)
+        sizePolicy3.setVerticalStretch(0)
+        sizePolicy3.setHeightForWidth(self.stackedWidget.sizePolicy().hasHeightForWidth())
+        self.stackedWidget.setSizePolicy(sizePolicy3)
         self.stackedWidget.setStyleSheet(u"background: transparent;")
         self.home = QWidget()
         self.home.setObjectName(u"home")
+        sizePolicy1.setHeightForWidth(self.home.sizePolicy().hasHeightForWidth())
+        self.home.setSizePolicy(sizePolicy1)
         self.home.setStyleSheet(u"")
+        self.gridLayout_5 = QGridLayout(self.home)
+        self.gridLayout_5.setObjectName(u"gridLayout_5")
+        self.widget = QWidget(self.home)
+        self.widget.setObjectName(u"widget")
+
+        self.gridLayout_5.addWidget(self.widget, 0, 0, 3, 2)
+
         self.btn_team = QPushButton(self.home)
         self.btn_team.setObjectName(u"btn_team")
-        self.btn_team.setGeometry(QRect(30, 20, 181, 231))
+        sizePolicy3.setHeightForWidth(self.btn_team.sizePolicy().hasHeightForWidth())
+        self.btn_team.setSizePolicy(sizePolicy3)
         icon4 = QIcon(QIcon.fromTheme(u"application-x-executable"))
         self.btn_team.setIcon(icon4)
+
+        self.gridLayout_5.addWidget(self.btn_team, 1, 1, 1, 1)
+
         self.frame = QFrame(self.home)
         self.frame.setObjectName(u"frame")
-        self.frame.setGeometry(QRect(30, 30, 1161, 271))
+        sizePolicy3.setHeightForWidth(self.frame.sizePolicy().hasHeightForWidth())
+        self.frame.setSizePolicy(sizePolicy3)
         self.frame.setFrameShape(QFrame.StyledPanel)
         self.frame.setFrameShadow(QFrame.Raised)
-        self.pushButton_4 = QPushButton(self.home)
-        self.pushButton_4.setObjectName(u"pushButton_4")
-        self.pushButton_4.setGeometry(QRect(690, 310, 371, 71))
-        self.pushButton_3 = QPushButton(self.home)
-        self.pushButton_3.setObjectName(u"pushButton_3")
-        self.pushButton_3.setGeometry(QRect(690, 400, 371, 71))
-        self.pushButton_2 = QPushButton(self.home)
-        self.pushButton_2.setObjectName(u"pushButton_2")
-        self.pushButton_2.setGeometry(QRect(690, 490, 371, 71))
+
+        self.gridLayout_5.addWidget(self.frame, 2, 1, 1, 2)
+
         self.scrollArea_2 = QScrollArea(self.home)
         self.scrollArea_2.setObjectName(u"scrollArea_2")
-        self.scrollArea_2.setGeometry(QRect(30, 310, 601, 251))
         self.scrollArea_2.setWidgetResizable(True)
         self.scrollAreaWidgetContents_2 = QWidget()
         self.scrollAreaWidgetContents_2.setObjectName(u"scrollAreaWidgetContents_2")
-        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 599, 249))
+        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 573, 344))
         self.scrollArea_2.setWidget(self.scrollAreaWidgetContents_2)
+
+        self.gridLayout_5.addWidget(self.scrollArea_2, 3, 1, 3, 1)
+
+        self.pushButton_4 = QPushButton(self.home)
+        self.pushButton_4.setObjectName(u"pushButton_4")
+        sizePolicy3.setHeightForWidth(self.pushButton_4.sizePolicy().hasHeightForWidth())
+        self.pushButton_4.setSizePolicy(sizePolicy3)
+
+        self.gridLayout_5.addWidget(self.pushButton_4, 3, 2, 1, 1)
+
+        self.pushButton_3 = QPushButton(self.home)
+        self.pushButton_3.setObjectName(u"pushButton_3")
+        sizePolicy3.setHeightForWidth(self.pushButton_3.sizePolicy().hasHeightForWidth())
+        self.pushButton_3.setSizePolicy(sizePolicy3)
+
+        self.gridLayout_5.addWidget(self.pushButton_3, 4, 2, 1, 1)
+
+        self.pushButton_2 = QPushButton(self.home)
+        self.pushButton_2.setObjectName(u"pushButton_2")
+        sizePolicy3.setHeightForWidth(self.pushButton_2.sizePolicy().hasHeightForWidth())
+        self.pushButton_2.setSizePolicy(sizePolicy3)
+
+        self.gridLayout_5.addWidget(self.pushButton_2, 5, 2, 1, 1)
+
         self.stackedWidget.addWidget(self.home)
         self.frame.raise_()
         self.btn_team.raise_()
@@ -1065,6 +1099,7 @@ class Ui_MainWindow(object):
         self.pushButton_3.raise_()
         self.pushButton_2.raise_()
         self.scrollArea_2.raise_()
+        self.widget.raise_()
         self.widgets = QWidget()
         self.widgets.setObjectName(u"widgets")
         self.widgets.setStyleSheet(u"b")
@@ -1339,9 +1374,6 @@ class Ui_MainWindow(object):
         __qtablewidgetitem23 = QTableWidgetItem()
         self.tableWidget.setItem(0, 3, __qtablewidgetitem23)
         self.tableWidget.setObjectName(u"tableWidget")
-        sizePolicy3 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
-        sizePolicy3.setHorizontalStretch(0)
-        sizePolicy3.setVerticalStretch(0)
         sizePolicy3.setHeightForWidth(self.tableWidget.sizePolicy().hasHeightForWidth())
         self.tableWidget.setSizePolicy(sizePolicy3)
         palette = QPalette()
@@ -1547,7 +1579,7 @@ class Ui_MainWindow(object):
         self.appLayout.addWidget(self.contentBox)
 
 
-        self.appMargins.addWidget(self.bgApp)
+        self.gridLayout_3.addWidget(self.bgApp, 0, 0, 1, 1)
 
         MainWindow.setCentralWidget(self.styleSheet)
 
