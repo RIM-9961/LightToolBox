@@ -1,5 +1,6 @@
 import sys
 import requests
+import webbrowser
 from modules import *
 from widgets import *
 now_version="v1.0.6\n"
@@ -16,6 +17,7 @@ class update_screen(QWidget):
         self.ui.offUpScreen.clicked.connect(self.openMainScreen)
         self.ui.download.clicked.connect(self.downLoadFromURL)
     def downLoadFromURL(self):
+        webbrowser.open("https://gitee.com/renjie-cn/light-tool-box", new=0, autoraise=True) 
         self.close()
     def openMainScreen(self):
         self.close()

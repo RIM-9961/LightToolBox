@@ -97,8 +97,10 @@ if __name__ == "__main__":
     window = MainWindow()
     window.show()
     #超级low的检测更新
-    if update()!=now_version:
-        up_screen=update_screen()
-        up_screen.show()
+    try:
+        if update()!=now_version:
+            up_screen=update_screen()
+            up_screen.show()
+    except:pass
     sys.exit(app.exec())
     
