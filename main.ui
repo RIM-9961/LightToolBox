@@ -1541,7 +1541,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                    </font>
                   </property>
                   <property name="text">
-                   <string>PyDracula APP - Theme with colors based on Dracula for Python.</string>
+                   <string>啊吧啊吧啊吧啊</string>
                   </property>
                   <property name="alignment">
                    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -1842,8 +1842,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
                        <property name="rightMargin">
                         <number>9</number>
                        </property>
-                       <item row="2" column="2">
-                        <widget class="QPushButton" name="pushButton_4">
+                       <item row="5" column="2">
+                        <widget class="QPushButton" name="exploreFile">
                          <property name="sizePolicy">
                           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                            <horstretch>0</horstretch>
@@ -1851,29 +1851,25 @@ li.checked::marker { content: &quot;\2612&quot;; }
                           </sizepolicy>
                          </property>
                          <property name="text">
-                          <string>新建项目</string>
+                          <string>导出项目</string>
                          </property>
-                        </widget>
-                       </item>
-                       <item row="2" column="1" rowspan="3">
-                        <widget class="QScrollArea" name="scrollArea_2">
-                         <property name="widgetResizable">
-                          <bool>true</bool>
-                         </property>
-                         <widget class="QWidget" name="scrollAreaWidgetContents_2">
-                          <property name="geometry">
-                           <rect>
-                            <x>0</x>
-                            <y>0</y>
-                            <width>573</width>
-                            <height>432</height>
-                           </rect>
-                          </property>
-                         </widget>
                         </widget>
                        </item>
                        <item row="0" column="0" rowspan="2" colspan="2">
                         <widget class="QWidget" name="widget" native="true"/>
+                       </item>
+                       <item row="4" column="2">
+                        <widget class="QPushButton" name="openFile">
+                         <property name="sizePolicy">
+                          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                           <horstretch>0</horstretch>
+                           <verstretch>0</verstretch>
+                          </sizepolicy>
+                         </property>
+                         <property name="text">
+                          <string>打开项目</string>
+                         </property>
+                        </widget>
                        </item>
                        <item row="1" column="1" colspan="2">
                         <widget class="QFrame" name="frame">
@@ -1975,7 +1971,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                         </widget>
                        </item>
                        <item row="3" column="2">
-                        <widget class="QPushButton" name="pushButton_3">
+                        <widget class="QPushButton" name="creatNewFile">
                          <property name="sizePolicy">
                           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                            <horstretch>0</horstretch>
@@ -1983,20 +1979,19 @@ li.checked::marker { content: &quot;\2612&quot;; }
                           </sizepolicy>
                          </property>
                          <property name="text">
-                          <string>打开项目</string>
+                          <string>新建项目</string>
                          </property>
                         </widget>
                        </item>
-                       <item row="4" column="2">
-                        <widget class="QPushButton" name="pushButton_2">
-                         <property name="sizePolicy">
-                          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-                           <horstretch>0</horstretch>
-                           <verstretch>0</verstretch>
-                          </sizepolicy>
-                         </property>
-                         <property name="text">
-                          <string>导出项目</string>
+                       <item row="3" column="1" rowspan="3">
+                        <widget class="QListView" name="listView">
+                         <property name="font">
+                          <font>
+                           <family>Segoe UI</family>
+                           <pointsize>10</pointsize>
+                           <italic>false</italic>
+                           <bold>false</bold>
+                          </font>
                          </property>
                         </widget>
                        </item>

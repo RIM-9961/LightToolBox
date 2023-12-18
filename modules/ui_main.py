@@ -18,10 +18,10 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
 from PySide6.QtWidgets import (QAbstractItemView, QAbstractScrollArea, QApplication, QCheckBox,
     QComboBox, QCommandLinkButton, QFrame, QGridLayout,
     QHBoxLayout, QHeaderView, QLabel, QLineEdit,
-    QMainWindow, QPlainTextEdit, QPushButton, QRadioButton,
-    QScrollArea, QScrollBar, QSizePolicy, QSlider,
-    QSpacerItem, QStackedWidget, QTableWidget, QTableWidgetItem,
-    QTextEdit, QVBoxLayout, QWidget)
+    QListView, QMainWindow, QPlainTextEdit, QPushButton,
+    QRadioButton, QScrollArea, QScrollBar, QSizePolicy,
+    QSlider, QSpacerItem, QStackedWidget, QTableWidget,
+    QTableWidgetItem, QTextEdit, QVBoxLayout, QWidget)
 import resources_rc
 
 class Ui_MainWindow(object):
@@ -1040,27 +1040,24 @@ class Ui_MainWindow(object):
         self.gridLayout_5 = QGridLayout(self.home)
         self.gridLayout_5.setObjectName(u"gridLayout_5")
         self.gridLayout_5.setContentsMargins(-1, -1, 9, -1)
-        self.pushButton_4 = QPushButton(self.home)
-        self.pushButton_4.setObjectName(u"pushButton_4")
-        sizePolicy3.setHeightForWidth(self.pushButton_4.sizePolicy().hasHeightForWidth())
-        self.pushButton_4.setSizePolicy(sizePolicy3)
+        self.exploreFile = QPushButton(self.home)
+        self.exploreFile.setObjectName(u"exploreFile")
+        sizePolicy3.setHeightForWidth(self.exploreFile.sizePolicy().hasHeightForWidth())
+        self.exploreFile.setSizePolicy(sizePolicy3)
 
-        self.gridLayout_5.addWidget(self.pushButton_4, 2, 2, 1, 1)
-
-        self.scrollArea_2 = QScrollArea(self.home)
-        self.scrollArea_2.setObjectName(u"scrollArea_2")
-        self.scrollArea_2.setWidgetResizable(True)
-        self.scrollAreaWidgetContents_2 = QWidget()
-        self.scrollAreaWidgetContents_2.setObjectName(u"scrollAreaWidgetContents_2")
-        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 573, 432))
-        self.scrollArea_2.setWidget(self.scrollAreaWidgetContents_2)
-
-        self.gridLayout_5.addWidget(self.scrollArea_2, 2, 1, 3, 1)
+        self.gridLayout_5.addWidget(self.exploreFile, 5, 2, 1, 1)
 
         self.widget = QWidget(self.home)
         self.widget.setObjectName(u"widget")
 
         self.gridLayout_5.addWidget(self.widget, 0, 0, 2, 2)
+
+        self.openFile = QPushButton(self.home)
+        self.openFile.setObjectName(u"openFile")
+        sizePolicy3.setHeightForWidth(self.openFile.sizePolicy().hasHeightForWidth())
+        self.openFile.setSizePolicy(sizePolicy3)
+
+        self.gridLayout_5.addWidget(self.openFile, 4, 2, 1, 1)
 
         self.frame = QFrame(self.home)
         self.frame.setObjectName(u"frame")
@@ -1074,8 +1071,6 @@ class Ui_MainWindow(object):
         self.btn_team.setObjectName(u"btn_team")
         sizePolicy3.setHeightForWidth(self.btn_team.sizePolicy().hasHeightForWidth())
         self.btn_team.setSizePolicy(sizePolicy3)
-        icon4 = QIcon(QIcon.fromTheme(u"application-x-executable"))
-        self.btn_team.setIcon(icon4)
         self.btn_team.setAutoRepeatDelay(300)
 
         self.horizontalLayout_7.addWidget(self.btn_team)
@@ -1103,19 +1098,18 @@ class Ui_MainWindow(object):
 
         self.gridLayout_5.addWidget(self.frame, 1, 1, 1, 2)
 
-        self.pushButton_3 = QPushButton(self.home)
-        self.pushButton_3.setObjectName(u"pushButton_3")
-        sizePolicy3.setHeightForWidth(self.pushButton_3.sizePolicy().hasHeightForWidth())
-        self.pushButton_3.setSizePolicy(sizePolicy3)
+        self.creatNewFile = QPushButton(self.home)
+        self.creatNewFile.setObjectName(u"creatNewFile")
+        sizePolicy3.setHeightForWidth(self.creatNewFile.sizePolicy().hasHeightForWidth())
+        self.creatNewFile.setSizePolicy(sizePolicy3)
 
-        self.gridLayout_5.addWidget(self.pushButton_3, 3, 2, 1, 1)
+        self.gridLayout_5.addWidget(self.creatNewFile, 3, 2, 1, 1)
 
-        self.pushButton_2 = QPushButton(self.home)
-        self.pushButton_2.setObjectName(u"pushButton_2")
-        sizePolicy3.setHeightForWidth(self.pushButton_2.sizePolicy().hasHeightForWidth())
-        self.pushButton_2.setSizePolicy(sizePolicy3)
+        self.listView = QListView(self.home)
+        self.listView.setObjectName(u"listView")
+        self.listView.setFont(font)
 
-        self.gridLayout_5.addWidget(self.pushButton_2, 4, 2, 1, 1)
+        self.gridLayout_5.addWidget(self.listView, 3, 1, 3, 1)
 
         self.stackedWidget.addWidget(self.home)
         self.widgets = QWidget()
@@ -1182,9 +1176,9 @@ class Ui_MainWindow(object):
         self.pushButton.setFont(font)
         self.pushButton.setCursor(QCursor(Qt.PointingHandCursor))
         self.pushButton.setStyleSheet(u"background-color: rgb(52, 59, 72);")
-        icon5 = QIcon()
-        icon5.addFile(u":/icons/images/icons/cil-folder-open.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.pushButton.setIcon(icon5)
+        icon4 = QIcon()
+        icon4.addFile(u":/icons/images/icons/cil-folder-open.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.pushButton.setIcon(icon4)
 
         self.gridLayout.addWidget(self.pushButton, 0, 1, 1, 1)
 
@@ -1307,9 +1301,9 @@ class Ui_MainWindow(object):
         self.commandLinkButton.setObjectName(u"commandLinkButton")
         self.commandLinkButton.setCursor(QCursor(Qt.PointingHandCursor))
         self.commandLinkButton.setStyleSheet(u"")
-        icon6 = QIcon()
-        icon6.addFile(u":/icons/images/icons/cil-link.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.commandLinkButton.setIcon(icon6)
+        icon5 = QIcon()
+        icon5.addFile(u":/icons/images/icons/cil-link.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.commandLinkButton.setIcon(icon5)
 
         self.gridLayout_2.addWidget(self.commandLinkButton, 1, 6, 1, 1)
 
@@ -1644,7 +1638,7 @@ class Ui_MainWindow(object):
 "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-in"
                         "dent:0; text-indent:0px;\"><span style=\" font-size:12pt; font-weight:600; color:#ff79c6;\">Convert QRC</span></p>\n"
 "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:9pt; color:#ffffff;\">pyside6-rcc resources.qrc -o resources_rc.py</span></p></body></html>", None))
-        self.titleRightInfo.setText(QCoreApplication.translate("MainWindow", u"PyDracula APP - Theme with colors based on Dracula for Python.", None))
+        self.titleRightInfo.setText(QCoreApplication.translate("MainWindow", u"\u554a\u5427\u554a\u5427\u554a\u5427\u554a", None))
 #if QT_CONFIG(tooltip)
         self.settingsTopBtn.setToolTip(QCoreApplication.translate("MainWindow", u"Settings", None))
 #endif // QT_CONFIG(tooltip)
@@ -1661,10 +1655,10 @@ class Ui_MainWindow(object):
         self.closeAppBtn.setToolTip(QCoreApplication.translate("MainWindow", u"Close", None))
 #endif // QT_CONFIG(tooltip)
         self.closeAppBtn.setText("")
-        self.pushButton_4.setText(QCoreApplication.translate("MainWindow", u"\u65b0\u5efa\u9879\u76ee", None))
+        self.exploreFile.setText(QCoreApplication.translate("MainWindow", u"\u5bfc\u51fa\u9879\u76ee", None))
+        self.openFile.setText(QCoreApplication.translate("MainWindow", u"\u6253\u5f00\u9879\u76ee", None))
         self.btn_team.setText(QCoreApplication.translate("MainWindow", u"\u56e2\u961f\u4ecb\u7ecd", None))
-        self.pushButton_3.setText(QCoreApplication.translate("MainWindow", u"\u6253\u5f00\u9879\u76ee", None))
-        self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u"\u5bfc\u51fa\u9879\u76ee", None))
+        self.creatNewFile.setText(QCoreApplication.translate("MainWindow", u"\u65b0\u5efa\u9879\u76ee", None))
         self.labelBoxBlenderInstalation.setText(QCoreApplication.translate("MainWindow", u"FILE BOX", None))
         self.lineEdit.setText("")
         self.lineEdit.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Type here", None))
