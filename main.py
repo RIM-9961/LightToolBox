@@ -98,7 +98,8 @@ if __name__ == "__main__":
     window.show()
     #超级low的检测更新
     try:
-        if update()!=now_version:
+        if update()==now_version:
+            print(update())
             up_screen=update_screen()
             up_screen.show()
     except:pass
