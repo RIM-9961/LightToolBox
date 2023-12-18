@@ -2,7 +2,7 @@ import sys
 import requests
 from modules import *
 from widgets import *
-now_version="v1.0.5\n"
+now_version="v1.0.6\n"
 def update():
     url="https://gitee.com/api/v5/repos/renjie-cn/light-tool-box/branches/main"
     dm=requests.get(url).json()
