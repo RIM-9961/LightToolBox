@@ -3,7 +3,6 @@ import os
 import platform
 from modules import *
 from widgets import *
-os.environ["QT_FONT_DPI"] = "96" # FIX Problem for High DPI and Scale above 100%
 # SET AS GLOBAL widgets
 #-------------------------------------------------------------
 widgets = None
@@ -25,7 +24,7 @@ class MainWindow(QMainWindow):
         title = "光刃工具箱"
         description = "光刃工具箱"
         #屏幕大小自适应
-        self.resize(width*0.7,height*0.7)
+        os.environ["QT_FONT_DPI"] = str(width/100)
         # 设置窗口标题
         self.setWindowTitle(title)
         widgets.titleRightInfo.setText(description)

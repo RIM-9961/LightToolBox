@@ -1832,15 +1832,18 @@ li.checked::marker { content: &quot;\2612&quot;; }
                         <verstretch>0</verstretch>
                        </sizepolicy>
                       </property>
+                      <property name="cursor">
+                       <cursorShape>ArrowCursor</cursorShape>
+                      </property>
                       <property name="styleSheet">
                        <string notr="true"/>
                       </property>
                       <layout class="QGridLayout" name="gridLayout_5">
-                       <item row="0" column="0" rowspan="3" colspan="2">
-                        <widget class="QWidget" name="widget" native="true"/>
-                       </item>
-                       <item row="1" column="1">
-                        <widget class="QPushButton" name="btn_team">
+                       <property name="rightMargin">
+                        <number>9</number>
+                       </property>
+                       <item row="2" column="2">
+                        <widget class="QPushButton" name="pushButton_4">
                          <property name="sizePolicy">
                           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                            <horstretch>0</horstretch>
@@ -1848,14 +1851,31 @@ li.checked::marker { content: &quot;\2612&quot;; }
                           </sizepolicy>
                          </property>
                          <property name="text">
-                          <string>团队介绍</string>
-                         </property>
-                         <property name="icon">
-                          <iconset theme="application-x-executable"/>
+                          <string>新建项目</string>
                          </property>
                         </widget>
                        </item>
-                       <item row="2" column="1" colspan="2">
+                       <item row="2" column="1" rowspan="3">
+                        <widget class="QScrollArea" name="scrollArea_2">
+                         <property name="widgetResizable">
+                          <bool>true</bool>
+                         </property>
+                         <widget class="QWidget" name="scrollAreaWidgetContents_2">
+                          <property name="geometry">
+                           <rect>
+                            <x>0</x>
+                            <y>0</y>
+                            <width>573</width>
+                            <height>432</height>
+                           </rect>
+                          </property>
+                         </widget>
+                        </widget>
+                       </item>
+                       <item row="0" column="0" rowspan="2" colspan="2">
+                        <widget class="QWidget" name="widget" native="true"/>
+                       </item>
+                       <item row="1" column="1" colspan="2">
                         <widget class="QFrame" name="frame">
                          <property name="sizePolicy">
                           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -1869,39 +1889,92 @@ li.checked::marker { content: &quot;\2612&quot;; }
                          <property name="frameShadow">
                           <enum>QFrame::Raised</enum>
                          </property>
-                        </widget>
-                       </item>
-                       <item row="3" column="1" rowspan="3">
-                        <widget class="QScrollArea" name="scrollArea_2">
-                         <property name="widgetResizable">
-                          <bool>true</bool>
-                         </property>
-                         <widget class="QWidget" name="scrollAreaWidgetContents_2">
-                          <property name="geometry">
-                           <rect>
-                            <x>0</x>
-                            <y>0</y>
-                            <width>573</width>
-                            <height>344</height>
-                           </rect>
-                          </property>
-                         </widget>
+                         <layout class="QHBoxLayout" name="horizontalLayout_7">
+                          <item>
+                           <widget class="QPushButton" name="btn_team">
+                            <property name="sizePolicy">
+                             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                              <horstretch>0</horstretch>
+                              <verstretch>0</verstretch>
+                             </sizepolicy>
+                            </property>
+                            <property name="text">
+                             <string>团队介绍</string>
+                            </property>
+                            <property name="autoRepeatDelay">
+                             <number>300</number>
+                            </property>
+                           </widget>
+                          </item>
+                          <item>
+                           <spacer name="horizontalSpacer_5">
+                            <property name="orientation">
+                             <enum>Qt::Horizontal</enum>
+                            </property>
+                            <property name="sizeHint" stdset="0">
+                             <size>
+                              <width>40</width>
+                              <height>20</height>
+                             </size>
+                            </property>
+                           </spacer>
+                          </item>
+                          <item>
+                           <spacer name="horizontalSpacer_4">
+                            <property name="orientation">
+                             <enum>Qt::Horizontal</enum>
+                            </property>
+                            <property name="sizeHint" stdset="0">
+                             <size>
+                              <width>40</width>
+                              <height>20</height>
+                             </size>
+                            </property>
+                           </spacer>
+                          </item>
+                          <item>
+                           <spacer name="horizontalSpacer_3">
+                            <property name="orientation">
+                             <enum>Qt::Horizontal</enum>
+                            </property>
+                            <property name="sizeHint" stdset="0">
+                             <size>
+                              <width>40</width>
+                              <height>20</height>
+                             </size>
+                            </property>
+                           </spacer>
+                          </item>
+                          <item>
+                           <spacer name="horizontalSpacer_2">
+                            <property name="orientation">
+                             <enum>Qt::Horizontal</enum>
+                            </property>
+                            <property name="sizeHint" stdset="0">
+                             <size>
+                              <width>40</width>
+                              <height>20</height>
+                             </size>
+                            </property>
+                           </spacer>
+                          </item>
+                          <item>
+                           <spacer name="horizontalSpacer">
+                            <property name="orientation">
+                             <enum>Qt::Horizontal</enum>
+                            </property>
+                            <property name="sizeHint" stdset="0">
+                             <size>
+                              <width>40</width>
+                              <height>20</height>
+                             </size>
+                            </property>
+                           </spacer>
+                          </item>
+                         </layout>
                         </widget>
                        </item>
                        <item row="3" column="2">
-                        <widget class="QPushButton" name="pushButton_4">
-                         <property name="sizePolicy">
-                          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-                           <horstretch>0</horstretch>
-                           <verstretch>0</verstretch>
-                          </sizepolicy>
-                         </property>
-                         <property name="text">
-                          <string>PushButton</string>
-                         </property>
-                        </widget>
-                       </item>
-                       <item row="4" column="2">
                         <widget class="QPushButton" name="pushButton_3">
                          <property name="sizePolicy">
                           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -1910,11 +1983,11 @@ li.checked::marker { content: &quot;\2612&quot;; }
                           </sizepolicy>
                          </property>
                          <property name="text">
-                          <string>PushButton</string>
+                          <string>打开项目</string>
                          </property>
                         </widget>
                        </item>
-                       <item row="5" column="2">
+                       <item row="4" column="2">
                         <widget class="QPushButton" name="pushButton_2">
                          <property name="sizePolicy">
                           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -1923,18 +1996,11 @@ li.checked::marker { content: &quot;\2612&quot;; }
                           </sizepolicy>
                          </property>
                          <property name="text">
-                          <string>PushButton</string>
+                          <string>导出项目</string>
                          </property>
                         </widget>
                        </item>
                       </layout>
-                      <zorder>frame</zorder>
-                      <zorder>btn_team</zorder>
-                      <zorder>pushButton_4</zorder>
-                      <zorder>pushButton_3</zorder>
-                      <zorder>pushButton_2</zorder>
-                      <zorder>scrollArea_2</zorder>
-                      <zorder>widget</zorder>
                      </widget>
                      <widget class="QWidget" name="widgets">
                       <property name="styleSheet">

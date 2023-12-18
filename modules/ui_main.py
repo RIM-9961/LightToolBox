@@ -20,8 +20,8 @@ from PySide6.QtWidgets import (QAbstractItemView, QAbstractScrollArea, QApplicat
     QHBoxLayout, QHeaderView, QLabel, QLineEdit,
     QMainWindow, QPlainTextEdit, QPushButton, QRadioButton,
     QScrollArea, QScrollBar, QSizePolicy, QSlider,
-    QStackedWidget, QTableWidget, QTableWidgetItem, QTextEdit,
-    QVBoxLayout, QWidget)
+    QSpacerItem, QStackedWidget, QTableWidget, QTableWidgetItem,
+    QTextEdit, QVBoxLayout, QWidget)
 import resources_rc
 
 class Ui_MainWindow(object):
@@ -1035,22 +1035,32 @@ class Ui_MainWindow(object):
         self.home.setObjectName(u"home")
         sizePolicy1.setHeightForWidth(self.home.sizePolicy().hasHeightForWidth())
         self.home.setSizePolicy(sizePolicy1)
+        self.home.setCursor(QCursor(Qt.ArrowCursor))
         self.home.setStyleSheet(u"")
         self.gridLayout_5 = QGridLayout(self.home)
         self.gridLayout_5.setObjectName(u"gridLayout_5")
+        self.gridLayout_5.setContentsMargins(-1, -1, 9, -1)
+        self.pushButton_4 = QPushButton(self.home)
+        self.pushButton_4.setObjectName(u"pushButton_4")
+        sizePolicy3.setHeightForWidth(self.pushButton_4.sizePolicy().hasHeightForWidth())
+        self.pushButton_4.setSizePolicy(sizePolicy3)
+
+        self.gridLayout_5.addWidget(self.pushButton_4, 2, 2, 1, 1)
+
+        self.scrollArea_2 = QScrollArea(self.home)
+        self.scrollArea_2.setObjectName(u"scrollArea_2")
+        self.scrollArea_2.setWidgetResizable(True)
+        self.scrollAreaWidgetContents_2 = QWidget()
+        self.scrollAreaWidgetContents_2.setObjectName(u"scrollAreaWidgetContents_2")
+        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 573, 432))
+        self.scrollArea_2.setWidget(self.scrollAreaWidgetContents_2)
+
+        self.gridLayout_5.addWidget(self.scrollArea_2, 2, 1, 3, 1)
+
         self.widget = QWidget(self.home)
         self.widget.setObjectName(u"widget")
 
-        self.gridLayout_5.addWidget(self.widget, 0, 0, 3, 2)
-
-        self.btn_team = QPushButton(self.home)
-        self.btn_team.setObjectName(u"btn_team")
-        sizePolicy3.setHeightForWidth(self.btn_team.sizePolicy().hasHeightForWidth())
-        self.btn_team.setSizePolicy(sizePolicy3)
-        icon4 = QIcon(QIcon.fromTheme(u"application-x-executable"))
-        self.btn_team.setIcon(icon4)
-
-        self.gridLayout_5.addWidget(self.btn_team, 1, 1, 1, 1)
+        self.gridLayout_5.addWidget(self.widget, 0, 0, 2, 2)
 
         self.frame = QFrame(self.home)
         self.frame.setObjectName(u"frame")
@@ -1058,48 +1068,56 @@ class Ui_MainWindow(object):
         self.frame.setSizePolicy(sizePolicy3)
         self.frame.setFrameShape(QFrame.StyledPanel)
         self.frame.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_7 = QHBoxLayout(self.frame)
+        self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
+        self.btn_team = QPushButton(self.frame)
+        self.btn_team.setObjectName(u"btn_team")
+        sizePolicy3.setHeightForWidth(self.btn_team.sizePolicy().hasHeightForWidth())
+        self.btn_team.setSizePolicy(sizePolicy3)
+        icon4 = QIcon(QIcon.fromTheme(u"application-x-executable"))
+        self.btn_team.setIcon(icon4)
+        self.btn_team.setAutoRepeatDelay(300)
 
-        self.gridLayout_5.addWidget(self.frame, 2, 1, 1, 2)
+        self.horizontalLayout_7.addWidget(self.btn_team)
 
-        self.scrollArea_2 = QScrollArea(self.home)
-        self.scrollArea_2.setObjectName(u"scrollArea_2")
-        self.scrollArea_2.setWidgetResizable(True)
-        self.scrollAreaWidgetContents_2 = QWidget()
-        self.scrollAreaWidgetContents_2.setObjectName(u"scrollAreaWidgetContents_2")
-        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 573, 344))
-        self.scrollArea_2.setWidget(self.scrollAreaWidgetContents_2)
+        self.horizontalSpacer_5 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
-        self.gridLayout_5.addWidget(self.scrollArea_2, 3, 1, 3, 1)
+        self.horizontalLayout_7.addItem(self.horizontalSpacer_5)
 
-        self.pushButton_4 = QPushButton(self.home)
-        self.pushButton_4.setObjectName(u"pushButton_4")
-        sizePolicy3.setHeightForWidth(self.pushButton_4.sizePolicy().hasHeightForWidth())
-        self.pushButton_4.setSizePolicy(sizePolicy3)
+        self.horizontalSpacer_4 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
-        self.gridLayout_5.addWidget(self.pushButton_4, 3, 2, 1, 1)
+        self.horizontalLayout_7.addItem(self.horizontalSpacer_4)
+
+        self.horizontalSpacer_3 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_7.addItem(self.horizontalSpacer_3)
+
+        self.horizontalSpacer_2 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_7.addItem(self.horizontalSpacer_2)
+
+        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_7.addItem(self.horizontalSpacer)
+
+
+        self.gridLayout_5.addWidget(self.frame, 1, 1, 1, 2)
 
         self.pushButton_3 = QPushButton(self.home)
         self.pushButton_3.setObjectName(u"pushButton_3")
         sizePolicy3.setHeightForWidth(self.pushButton_3.sizePolicy().hasHeightForWidth())
         self.pushButton_3.setSizePolicy(sizePolicy3)
 
-        self.gridLayout_5.addWidget(self.pushButton_3, 4, 2, 1, 1)
+        self.gridLayout_5.addWidget(self.pushButton_3, 3, 2, 1, 1)
 
         self.pushButton_2 = QPushButton(self.home)
         self.pushButton_2.setObjectName(u"pushButton_2")
         sizePolicy3.setHeightForWidth(self.pushButton_2.sizePolicy().hasHeightForWidth())
         self.pushButton_2.setSizePolicy(sizePolicy3)
 
-        self.gridLayout_5.addWidget(self.pushButton_2, 5, 2, 1, 1)
+        self.gridLayout_5.addWidget(self.pushButton_2, 4, 2, 1, 1)
 
         self.stackedWidget.addWidget(self.home)
-        self.frame.raise_()
-        self.btn_team.raise_()
-        self.pushButton_4.raise_()
-        self.pushButton_3.raise_()
-        self.pushButton_2.raise_()
-        self.scrollArea_2.raise_()
-        self.widget.raise_()
         self.widgets = QWidget()
         self.widgets.setObjectName(u"widgets")
         self.widgets.setStyleSheet(u"b")
@@ -1643,10 +1661,10 @@ class Ui_MainWindow(object):
         self.closeAppBtn.setToolTip(QCoreApplication.translate("MainWindow", u"Close", None))
 #endif // QT_CONFIG(tooltip)
         self.closeAppBtn.setText("")
+        self.pushButton_4.setText(QCoreApplication.translate("MainWindow", u"\u65b0\u5efa\u9879\u76ee", None))
         self.btn_team.setText(QCoreApplication.translate("MainWindow", u"\u56e2\u961f\u4ecb\u7ecd", None))
-        self.pushButton_4.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
-        self.pushButton_3.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
-        self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
+        self.pushButton_3.setText(QCoreApplication.translate("MainWindow", u"\u6253\u5f00\u9879\u76ee", None))
+        self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u"\u5bfc\u51fa\u9879\u76ee", None))
         self.labelBoxBlenderInstalation.setText(QCoreApplication.translate("MainWindow", u"FILE BOX", None))
         self.lineEdit.setText("")
         self.lineEdit.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Type here", None))
