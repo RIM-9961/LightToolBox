@@ -18,7 +18,7 @@ class MainWindow(QMainWindow):
         self.ui.setupUi(self)
         global widgets
         widgets = self.ui 
-        # USE CUSTOM TITLE BAR | USE AS "False" FOR MAC OR LINUX
+        # USE CUSTOM TITLE BAR | USE AS "False" FOR MAC OR LINUX对于mac和linux的支持
         #-------------------------------------------------------------
         Settings.ENABLE_CUSTOM_TITLE_BAR = True
         title = "光刃工具箱"
@@ -29,13 +29,9 @@ class MainWindow(QMainWindow):
         self.setWindowTitle(title)
         widgets.titleRightInfo.setText(description)
         widgets.toggleButton.clicked.connect(lambda: UIFunctions.toggleMenu(self, True))
-        #-------------------------------------------------------------
         UIFunctions.uiDefinitions(self)
-        # QTableWidget PARAMETERS
-        #-------------------------------------------------------------
         widgets.tableWidget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
         # BUTTONS CLICK
-        #-------------------------------------------------------------
         # LEFT MENUS
         widgets.btn_home.clicked.connect(self.buttonClick)
         #widgets.btn_widgets.clicked.connect(self.buttonClick)
