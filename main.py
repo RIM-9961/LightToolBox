@@ -1,11 +1,8 @@
 import sys
 import os
-import platform
 from update import *
 from modules import *
 from widgets import *
-# SET AS GLOBAL widgets
-
 widgets = None
 class MainWindow(QMainWindow):
     def __init__(self):
