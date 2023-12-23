@@ -1189,7 +1189,7 @@ Button */
                   <string/>
                  </property>
                  <property name="icon">
-                  <iconset resource="resources.qrc">
+                  <iconset resource="../resources.qrc">
                    <normaloff>:/icons/images/icons/icon_close.png</normaloff>:/icons/images/icons/icon_close.png</iconset>
                  </property>
                  <property name="iconSize">
@@ -1605,7 +1605,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                    <string/>
                   </property>
                   <property name="icon">
-                   <iconset resource="resources.qrc">
+                   <iconset resource="../resources.qrc">
                     <normaloff>:/icons/images/icons/icon_settings.png</normaloff>:/icons/images/icons/icon_settings.png</iconset>
                   </property>
                   <property name="iconSize">
@@ -1640,7 +1640,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                    <string/>
                   </property>
                   <property name="icon">
-                   <iconset resource="resources.qrc">
+                   <iconset resource="../resources.qrc">
                     <normaloff>:/icons/images/icons/icon_minimize.png</normaloff>:/icons/images/icons/icon_minimize.png</iconset>
                   </property>
                   <property name="iconSize">
@@ -1684,7 +1684,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                    <string/>
                   </property>
                   <property name="icon">
-                   <iconset resource="resources.qrc">
+                   <iconset resource="../resources.qrc">
                     <normaloff>:/icons/images/icons/icon_maximize.png</normaloff>:/icons/images/icons/icon_maximize.png</iconset>
                   </property>
                   <property name="iconSize">
@@ -1719,7 +1719,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                    <string/>
                   </property>
                   <property name="icon">
-                   <iconset resource="resources.qrc">
+                   <iconset resource="../resources.qrc">
                     <normaloff>:/icons/images/icons/icon_close.png</normaloff>:/icons/images/icons/icon_close.png</iconset>
                   </property>
                   <property name="iconSize">
@@ -2172,7 +2172,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                                      <string>Open</string>
                                     </property>
                                     <property name="icon">
-                                     <iconset resource="resources.qrc">
+                                     <iconset resource="../resources.qrc">
                                       <normaloff>:/icons/images/icons/cil-folder-open.png</normaloff>:/icons/images/icons/cil-folder-open.png</iconset>
                                     </property>
                                    </widget>
@@ -2394,7 +2394,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                                <string>Link Button</string>
                               </property>
                               <property name="icon">
-                               <iconset resource="resources.qrc">
+                               <iconset resource="../resources.qrc">
                                 <normaloff>:/icons/images/icons/cil-link.png</normaloff>:/icons/images/icons/cil-link.png</iconset>
                               </property>
                               <property name="description">
@@ -3177,7 +3177,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
   <include location="local">3035194688</include>
  </includes>
  <resources>
-  <include location="resources.qrc"/>
+  <include location="../resources.qrc"/>
  </resources>
  <connections/>
 </ui>

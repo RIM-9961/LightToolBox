@@ -1,5 +1,6 @@
 import sys
 import os
+import resources_rc
 from update import *
 from modules import *
 from widgets import *
@@ -41,7 +42,7 @@ class MainWindow(QMainWindow):
             UIFunctions.toggleRightBox(self, True)
         widgets.settingsTopBtn.clicked.connect(openCloseRightBox)
         # 主题设置/来自py德古拉
-        themeFile = "themes\py_dracula_light.qss"#这是主题文件路径
+        themeFile = (u":/qss/themes/py_dracula_light.qss")#这是主题文件路径
         UIFunctions.theme(self, themeFile, True)
         AppFunctions.setThemeHack(self)
         # SET HOME PAGE AND SELECT MENU
@@ -53,31 +54,25 @@ class MainWindow(QMainWindow):
         # 获取点击了哪个按钮
         btn = self.sender()
         btnName = btn.objectName()
-        # SHOW HOME PAGE
         if btnName == "btn_home":
             widgets.stackedWidget.setCurrentWidget(widgets.home)
             UIFunctions.resetStyle(self, btnName)
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
-        # SHOW widgets PAGE
         if btnName == "btn_widgets":
             widgets.stackedWidget.setCurrentWidget(widgets.widgets)
             UIFunctions.resetStyle(self, btnName)
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
-        # SHOW NEW PAGE
         if btnName == "btn_new":
             widgets.stackedWidget.setCurrentWidget(widgets.new_page) # SET PAGE
             UIFunctions.resetStyle(self, btnName) # RESET ANOTHERS BUTTONS SELECTED
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet())) # SELECT MENU
         if btnName == "btn_save":
             print("Save BTN clicked!")
-        # PRINT BTN NAME
         print(f'Button "{btnName}" pressed!')
-    # RESIZE EVENTS
 #|----------------------------------------------------------------------------------------------
     def resizeEvent(self, event):
         # Update Size Grips
         UIFunctions.resize_grips(self)
-    # MOUSE CLICK EVENTS
 #|----------------------------------------------------------------------------------------------
     def mousePressEvent(self, event):
         # SET DRAG POS WINDOW
@@ -95,8 +90,7 @@ if __name__ == "__main__":
     window.show()
     #超级low的检测更新
     try:
-        if update()==now_version:
-            print(update())
+        if update()!=now_version:
             up_screen=update_screen()
             up_screen.show()
     except:pass
