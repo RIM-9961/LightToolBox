@@ -4,6 +4,9 @@
     <file>images/images/PyDracula.png</file>
     <file>images/images/PyDracula_vertical.png</file>
   </qresource>
+  <qresource prefix="qss">
+    <file>themes/py_dracula_light.qss</file>
+  </qresource>
   <qresource prefix="icons">
     <file>images/icons/cil-3d.png</file>
     <file>images/icons/cil-4k.png</file>

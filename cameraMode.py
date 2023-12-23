@@ -8,12 +8,10 @@ class MainWindow(QtWidgets.QMainWindow):
         super(MainWindow, self).__init__()
         self.ui = Ui_cameraScreen()
         self.ui.setupUi(self)
-
         self.Camera = Ui_cameraControl.DahengCamera()
         self.TimerForShowImageInGraphicsView = QtCore.QTimer()
         self.ImageWidthInGraphicsView = 600
         self.scene = QtWidgets.QGraphicsScene()
-
         self.SlotInit()
         self.UpdateUI()
 
