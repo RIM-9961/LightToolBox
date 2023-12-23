@@ -2,7 +2,6 @@ import sys
 from PySide6 import QtWidgets, QtCore, QtGui
 from modules import *
 import cv2
-
 class MainWindow(QtWidgets.QMainWindow):
     def __init__(self):
         super(MainWindow, self).__init__()
@@ -14,7 +13,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.scene = QtWidgets.QGraphicsScene()
         self.SlotInit()
         self.UpdateUI()
-
+        themeFile = (u":/qss/themes/py_dracula_light.qss")#这是主题文件路径
     def SlotInit(self):
         self.ui.pushButton_UpdateCameraList.clicked.connect(self.PB_UpdateCameraList_clicked)
         self.ui.pushButton_OpenCamera.clicked.connect(self.PB_OpenCamera_clicked)
@@ -26,7 +25,6 @@ class MainWindow(QtWidgets.QMainWindow):
         self.TimerForShowImageInGraphicsView.timeout.connect(self.SlotForShowImageInGraphicsView)
         self.ui.pushButton_SendSoftwareCommand.clicked.connect(self.SendSoftwareCommand)
         self.SlotConnect()
-
     def SlotConnect(self):
         self.ui.comboBox_ExposureAuto.currentIndexChanged.connect(self.SetExposureAuto)
         self.ui.doubleSpinBox_ExposureTime.valueChanged.connect(self.SetExposureTime)
@@ -34,7 +32,6 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui.comboBox_TriggerSource.currentIndexChanged.connect(self.SetTriggerSource)
         self.ui.comboBox_GainAuto.currentIndexChanged.connect(self.SetGainAuto)
         self.ui.doubleSpinBox_GainValue.valueChanged.connect(self.SetGainValue)
-
     def SlotDisConnect(self):
         self.ui.comboBox_ExposureAuto.currentIndexChanged.disconnect(self.SetExposureAuto)
         self.ui.doubleSpinBox_ExposureTime.valueChanged.disconnect(self.SetExposureTime)
@@ -42,7 +39,6 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui.comboBox_TriggerSource.currentIndexChanged.disconnect(self.SetTriggerSource)
         self.ui.comboBox_GainAuto.currentIndexChanged.disconnect(self.SetGainAuto)
         self.ui.doubleSpinBox_GainValue.valueChanged.disconnect(self.SetGainValue)
-
     def UpdateUI(self):
         self.ui.pushButton_OpenCamera.setDisabled(self.Camera.IsCameraOpened)
         self.ui.pushButton_CloseCamera.setDisabled(not self.Camera.IsCameraOpened)
@@ -63,98 +59,71 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui.comboBox_GainAuto.setDisabled(not self.Camera.IsCameraOpened)
         self.ui.doubleSpinBox_GainValue.setDisabled(not self.Camera.IsCameraOpened or
                                                     not self.ui.comboBox_GainAuto.currentIndex() == 0)
-
     def UpdateCameraPara_Range(self):
         self.SlotDisConnect()
-
         self.ui.comboBox_ExposureMode.clear()
         for Range in self.Camera.GetExposureModeRange():
             self.ui.comboBox_ExposureMode.addItem(Range)
-
         self.ui.comboBox_ExposureAuto.clear()
         for Range in self.Camera.GetExposureAutoRange():
             self.ui.comboBox_ExposureAuto.addItem(Range)
-
         self.ui.comboBox_TriggerMode.clear()
         for Range in self.Camera.GetTriggerAutoRange():
             self.ui.comboBox_TriggerMode.addItem(Range)
-
         self.ui.comboBox_TriggerSource.clear()
         for Range in self.Camera.GetTriggerSourceRange():
             self.ui.comboBox_TriggerSource.addItem(Range)
-
         self.ui.comboBox_GainAuto.clear()
         for Range in self.Camera.GetGainAutoRange():
             self.ui.comboBox_GainAuto.addItem(Range)
-
         self.SlotConnect()
-
     def GetCameraPara(self):
         self.SlotDisConnect()
-
         ExposureAuto = self.Camera.GetExposureAuto()
         self.ui.comboBox_ExposureAuto.setCurrentText(ExposureAuto[1])
-
         ExposureTime = self.Camera.GetExposureTime()
         self.ui.doubleSpinBox_ExposureTime.setValue(ExposureTime)
-
         TriggerMode = self.Camera.GetTriggerAuto()
         self.ui.comboBox_TriggerMode.setCurrentText(TriggerMode[1])
-
         TriggerSource = self.Camera.GetTriggerSource()
         self.ui.comboBox_TriggerSource.setCurrentText(TriggerSource[1])
-
         GainAuto = self.Camera.GetGainAuto()
         self.ui.comboBox_GainAuto.setCurrentText(GainAuto[1])
-
         GainValue = self.Camera.GetGainValue()
         self.ui.doubleSpinBox_GainValue.setValue(GainValue)
-
         self.SlotConnect()
-
     def PB_UpdateCameraList_clicked(self):
         status, CameraNameList = self.Camera.UpdateCameraList()
         if status:
             for CameraName in CameraNameList:
                 self.ui.comboBox_CameraList.addItem(CameraName)
-
     def PB_OpenCamera_clicked(self):
         if self.ui.comboBox_CameraList.count() == 0:
             return
         self.Camera.OpenCamera(int(self.ui.comboBox_CameraList.currentIndex()) + 1)
         self.UpdateCameraPara_Range()
         self.GetCameraPara()
-
         self.UpdateUI()
-
     def PB_CloseCamera_clicked(self):
         self.Camera.CloseCamera(int(self.ui.comboBox_CameraList.currentIndex()) + 1)
         if self.TimerForShowImageInGraphicsView.isActive():
             self.TimerForShowImageInGraphicsView.stop()
         Ui_cameraControl.num = 0
-
         self.UpdateUI()
-
     def PB_StartAcq_clicked(self):
         self.Camera.StartAcquisition()
         self.TimerForShowImageInGraphicsView.start(33)
-
         self.UpdateUI()
-
     def PB_StopAcq_clicked(self):
         self.Camera.StopAcquisition()
         self.TimerForShowImageInGraphicsView.stop()
         self.UpdateUI()
-
         Ui_cameraControl.num = 0
-
     def PB_ZoomIn_clicked(self):
         self.ImageWidthInGraphicsView += 100
-
     def PB_ZoomOut_clicked(self):
         if self.ImageWidthInGraphicsView >= 200:
             self.ImageWidthInGraphicsView -= 100
-
     def SlotForShowImageInGraphicsView(self):
         if Ui_cameraControl.rawImageUpdate is None:
             return
@@ -217,5 +186,4 @@ if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)
     window = MainWindow()
     window.show()
-
     sys.exit(app.exec_())

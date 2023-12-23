@@ -63,9 +63,9 @@ class MainWindow(QMainWindow):
             UIFunctions.resetStyle(self, btnName)
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
         if btnName == "btn_new":
-            widgets.stackedWidget.setCurrentWidget(widgets.new_page) # SET PAGE
-            UIFunctions.resetStyle(self, btnName) # RESET ANOTHERS BUTTONS SELECTED
-            btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet())) # SELECT MENU
+            widgets.stackedWidget.setCurrentWidget(widgets.new_page)
+            UIFunctions.resetStyle(self, btnName) 
+            btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
         if btnName == "btn_save":
             print("Save BTN clicked!")
         print(f'Button "{btnName}" pressed!')
